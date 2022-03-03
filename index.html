@@ -1,60 +1,38 @@
 <!DOCTYPE html>
 <html lang="pl">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mój budżet</title>
-    <script src="https://kit.fontawesome.com/8c62507aab.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
     <div class="wrapper">
         <div class="picture"></div>
         <div class="balance">
-            <div class="balance_description">Bilans:</div>
-            <div class="balance_value">2300,00</div>
+            <div class="balance-description">Bilans:</div>
+            <div class="balance-value">&nbsp;</div>
+            <div class="emoji"></div>
         </div>
         <div class="income-spend-wrapper">
+
             <div class="income">
                 <div class="income-top-wrapper">
                     <div class="title">PRZYCHODY</div>
                     <div class="add">
                         <input class="name" placeholder="nazwa przychodu">
                         <input class="value" placeholder="kwota">
-                        <button>DODAJ</button>
+                        <button id="income-add-button" class="button">ZAPISZ</button>
+                    </div>
+                    <div class="edit hidden">
+                        <input class="name" placeholder="nazwa przychodu">
+                        <input class="value" placeholder="kwota">
+                        <button id="income-edit-button" class="button">ZAPISZ</button>
                     </div>
                     <div class="list">
-                        <div class="list-row">
-                            <div class="list-content">
-                                <div class="list-name">Zarobki z pracy</div>
-                                <div class="list-value">3000,00</div>
-                            </div>
-                            <div class="list-buttons">
-                                <div class="list-edit"><i class="fas fa-pencil-alt" title="Edytuj"></i></div>
-                                <div class="list-delete"><i class="far fa-trash-alt" title="Usuń"></i></div>
-                            </div>
-                        </div>
-                        <div class="list-row">
-                            <div class="list-content">
-                                <div class="list-name">Sprzedaż na olx</div>
-                                <div class="list-value">55,30</div>
-                            </div>
-                            <div class="list-buttons">
-                                <div class="list-edit"><i class="fas fa-pencil-alt" title="Edytuj"></i></div>
-                                <div class="list-delete"><i class="far fa-trash-alt" title="Usuń"></i></div>
-                            </div>
-                        </div>
-                        <div class="list-row">
-                            <div class="list-content">
-                                <div class="list-name">Zlecenia dodatkowe</div>
-                                <div class="list-value">507,00</div>
-                            </div>
-                            <div class="list-buttons">
-                                <div class="list-edit"><i class="fas fa-pencil-alt" title="Edytuj"></i></div>
-                                <div class="list-delete"><i class="far fa-trash-alt" title="Usuń" ></i></div>
-                            </div>
-                        </div>
                     </div>
                 </div>
                 <div class="total">
@@ -62,57 +40,27 @@
                         <div class="list-row">
                             <div class="list-content">
                                 <div class="list-name">Suma przychodów</div>
-                                <div class="list-value">6000,00</div>
-                            </div>
-                            <div class="list-buttons">
-                                <div class="list-edit"><i class="fas"></i></div>
-                                <div class="list-delete"><i class="far"></i></div>
+                                <div class="list-value"></div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-           
 
             <div class="spend">
-                <div class="income-top-wrapper">
+                <div class="spend-top-wrapper">
                     <div class="title">WYDATKI</div>
                     <div class="add">
                         <input class="name" placeholder="nazwa wydatku">
                         <input class="value" placeholder="kwota">
-                        <button>DODAJ</button>
+                        <button id="spend-add-button" class="button">ZAPISZ</button>
+                    </div>
+                    <div class="edit hidden">
+                        <input class="name" placeholder="nazwa wydatku">
+                        <input class="value" placeholder="kwota">
+                        <button id="spend-edit-button" class="button">ZAPISZ</button>
                     </div>
                     <div class="list">
-                        <div class="list-row">
-                            <div class="list-content">
-                                <div class="list-name">Zarobki z pracy</div>
-                                <div class="list-value">3000,00</div>
-                            </div>
-                            <div class="list-buttons">
-                                <div class="list-edit"><i class="fas fa-pencil-alt" title="Edytuj"></i></div>
-                                <div class="list-delete"><i class="far fa-trash-alt" title="Usuń"></i></div>
-                            </div>
-                        </div>
-                        <div class="list-row">
-                            <div class="list-content">
-                                <div class="list-name">Sprzedaż na olx</div>
-                                <div class="list-value">55,30</div>
-                            </div>
-                            <div class="list-buttons">
-                                <div class="list-edit"><i class="fas fa-pencil-alt" title="Edytuj"></i></div>
-                                <div class="list-delete"><i class="far fa-trash-alt" title="Usuń"></i></div>
-                            </div>
-                        </div>
-                        <div class="list-row">
-                            <div class="list-content">
-                                <div class="list-name">Zlecenia dodatkowe</div>
-                                <div class="list-value">507,00</div>
-                            </div>
-                            <div class="list-buttons">
-                                <div class="list-edit"><i class="fas fa-pencil-alt" title="Edytuj"></i></div>
-                                <div class="list-delete"><i class="far fa-trash-alt" title="Usuń"></i></div>
-                            </div>
-                        </div>
                     </div>
                 </div>
                 <div class="total">
@@ -120,18 +68,16 @@
                         <div class="list-row">
                             <div class="list-content">
                                 <div class="list-name">Suma wydatków</div>
-                                <div class="list-value">6000,00</div>
-                            </div>
-                            <div class="list-buttons">
-                                <div class="list-edit"><i class="fas"></i></div>
-                                <div class="list-delete"><i class="far"></i></div>
+                                <div class="list-value"></div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
+
         </div>
     </div>
     <script src="script.js"></script>
 </body>
+
 </html>

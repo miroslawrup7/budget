@@ -1,228 +1,434 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap");
 
 * {
-  margin: 0;
-  padding: 0;
-  border: 0;
-  line-height: 1.4em;
-  vertical-align: baseline;
-  text-decoration: none;
-  outline: 0;
-  box-sizing: border-box;
-  background-color: transparent;
-  font-size: 100%;
-  font: inherit;
-  font-family: "Poppins", sans-serif;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    line-height: 1.4em;
+    vertical-align: baseline;
+    text-decoration: none;
+    outline: 0;
+    box-sizing: border-box;
+    background-color: transparent;
+    font-size: 100%;
+    font: inherit;
+    font-family: "Poppins", sans-serif;
 }
 
 .wrapper {
-  width: 1200px;
-  min-height: 100vh;
-  margin: 0 auto;
-  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    width: 1200px;
+    min-height: 100vh;
+    margin: 0 auto;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 }
 
 .picture {
-  width: 100%;
-  height: 100px;
-  background-image: url("images/background.jpg");
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-  font-size: 2.5em;
-  font-weight: 500;
-  display: flex;
-  align-items: center;
-  padding-left: 30px;
+    width: 100%;
+    height: 100px;
+    background-image: url("images/background.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    font-size: 2.5em;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    padding-left: 30px;
 }
 
 .balance {
-  width: 100%;
-  height: 80px;
-  background-color: rgb(0, 118, 70);
-  /* background-color: #b71c1c; */
-  /* background-color: #ff893b; */
-  display: flex;
-  align-items: center;
-  justify-content: end;
-  padding-right: 15px;
-  box-shadow: rgba(0, 0, 0, 0.35) 0px 2px 8px;
-  margin-bottom: 30px;
-  font-size: 1.8em;
-  font-weight: 500;
+    width: 100%;
+    height: 80px;
+    background-color: lightgrey;
+    display: flex;
+    align-items: center;
+    justify-content: end;
+    padding-right: 15px;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 2px 8px;
+    margin-bottom: 30px;
+    font-size: 1.8em;
+    font-weight: 500;
+    position: relative;
 }
 
-.balance_description {
-  background-color: rgb(0, 118, 70);
-  /* background-color: #b71c1c; */
-  /* background-color: #ff893b; */
-  color: white;
-  height: 100%;
-  display: flex;
-  align-items: center;
-  padding: 0 30px;
+.emoji {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 50px;
+    height: 50px;
+    display: block;
+    filter: invert(97%) sepia(1%) saturate(229%) hue-rotate(121deg)
+        brightness(118%) contrast(100%);
 }
 
-.balance_value {
-  background-color: white;
-  display: flex;
-  align-items: center;
-  padding: 0 30px;
-  box-shadow: inset 1px 1px 5px rgba(0, 0, 0, 0.9);
-  border-radius: 5px;
-  font-weight: 500;
+.smile::after {
+    content: url(images/smile.svg);
+}
+.meh::after {
+    content: url(images/meh.svg);
+}
+.frown::after {
+    content: url(images/frown.svg);
+}
+
+.red {
+    background-color: #b71c1c;
+}
+
+.orange {
+    background-color: #ff893b;
+}
+
+.green {
+    background-color: rgb(0, 118, 70);
+}
+
+.balance-description {
+    background-color: transparent;
+    color: white;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    padding: 0 30px;
+}
+
+.balance-value {
+    background-color: white;
+    display: flex;
+    align-items: center;
+    padding: 0 30px;
+    box-shadow: inset 1px 1px 5px rgba(0, 0, 0, 0.9);
+    border-radius: 5px;
+    font-weight: 500;
+    min-width: 200px;
+    justify-content: end;
 }
 
 .income-spend-wrapper {
-  width: 100%;
-  height: 100%;
-  display: flex;
-  justify-content: space-around;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
 }
 
 .income {
-  width: 45%;
-  min-height: 400px;
-  background-color: rgba(0, 118, 70, 0.2);
-  box-shadow: rgba(0, 0, 0, 0.35) 0px 2px 8px;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
+    width: 45%;
+    min-height: 400px;
+    background-color: rgba(0, 118, 70, 0.1);
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 2px 8px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 }
 
 .spend {
-  width: 45%;
-  min-height: 400px;
-  background-color: rgba(183, 28, 28, 0.2);
-  box-shadow: rgba(0, 0, 0, 0.35) 0px 2px 8px;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
+    width: 45%;
+    min-height: 400px;
+    background-color: rgba(183, 28, 28, 0.1);
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 2px 8px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 }
 
 .title {
-  font-size: 1.7em;
-  font-weight: 600;
-  text-align: center;
-  margin: 10px 0 20px 0;
-  text-shadow: 1px 1px 2px grey;
+    font-size: 1.7em;
+    font-weight: 600;
+    text-align: center;
+    margin: 10px 0 20px 0;
+    text-shadow: 1px 1px 2px grey;
 }
 
-.add {
-  display: flex;
-  margin: 5px 5px 15px 5px;
+.add,
+.edit {
+    display: flex;
+    margin: 5px 5px 15px 5px;
 }
 
-.add input {
-  background-color: white;
-  margin: 0 5px;
-  height: 32px;
-  border-radius: 3px;
-  padding: 0 5px;
-  box-shadow: inset 1px 1px 3px rgba(0, 0, 0, 0.5);
+.income .add.hidden {
+    display: none;
 }
 
-.add .name {
-  width: 60%;
+.income .edit.hidden {
+    display: none;
 }
 
-.add .value {
-  width: 20%;
+.spend .add.hidden {
+    display: none;
 }
 
-.income .add button {
-  height: 20px;
-  width: 20%;
-  height: 32px;
-  margin: 0 5px;
-  border-radius: 3px;
-  font-weight: 600;
-  border: solid 1px rgba(0, 118, 70, 0.1);
-  background-color: rgba(0, 118, 70, 0.05);
-  box-shadow: rgba(0, 0, 0, 0.2) 1px 1px 1px;
-  cursor: pointer;
+.spend .edit.hidden {
+    display: none;
 }
 
-.spend .add button {
-  height: 20px;
-  width: 20%;
-  height: 32px;
-  margin: 0 5px;
-  border-radius: 3px;
-  font-weight: 600;
-  border: solid 1px rgba(183, 28, 28, 0.1);
-  background-color: rgba(183, 28, 28, 0.05);
-  box-shadow: rgba(0, 0, 0, 0.2) 1px 1px 1px;
-  cursor: pointer;
+.add input,
+.edit input {
+    background-color: white;
+    margin: 0 5px;
+    height: 32px;
+    border-radius: 3px;
+    padding: 0 5px;
+    box-shadow: inset 1px 1px 3px rgba(0, 0, 0, 0.5);
+}
+
+.add .name,
+.edit .name {
+    width: 60%;
+}
+
+.income .add .name:focus,
+.income .edit .name:focus {
+    border: rgba(0, 118, 70, 0.6) solid 1px;
+}
+
+.spend .add .name:focus,
+.spend .edit .name:focus {
+    border: rgba(183, 28, 28, 0.6) solid 1px;
+}
+
+.add .value,
+.edit .value {
+    width: 20%;
+    text-align: right;
+}
+
+.income .add .value:focus,
+.income .edit .value:focus {
+    border: rgba(0, 118, 70, 0.6) solid 1px;
+}
+
+.spend .add .value:focus,
+.spend .edit .value:focus {
+    border: rgba(183, 28, 28, 0.6) solid 1px;
+}
+
+.add button,
+.edit button {
+    height: 20px;
+    width: 16%;
+    height: 32px;
+    margin: 0 5px;
+    border-radius: 3px;
+    font-weight: 600;
+    box-shadow: rgba(0, 0, 0, 0.2) 1px 1px 1px;
+    opacity: 0.7;
+}
+
+.income .add .button,
+.income .edit .button,
+.income .list-buttons .list-edit,
+.income .list-buttons .list-delete {
+    border: solid 1px rgba(0, 118, 70, 0.1);
+    background-color: rgba(0, 118, 70, 0.05);
+    box-shadow: rgba(0, 0, 0, 0.2) 1px 1px 1px;
+}
+
+.income .add .button:hover,
+.income .edit .button:hover,
+.income .list-buttons .list-edit:hover,
+.income .list-buttons .list-delete:hover {
+    cursor: pointer;
+    border: solid 1px rgba(0, 118, 70, 0.2);
+    background-color: rgba(0, 118, 70, 0.1);
+    box-shadow: rgba(0, 0, 0, 0.5) 1px 1px 2px;
+    opacity: 1;
+}
+
+.spend .add .button,
+.spend .edit .button,
+.spend .list-buttons .list-edit,
+.spend .list-buttons .list-delete {
+    border: solid 1px rgba(183, 28, 28, 0.1);
+    background-color: rgba(183, 28, 28, 0.05);
+    box-shadow: rgba(0, 0, 0, 0.2) 1px 1px 1px;
+}
+
+.spend .add .button:hover,
+.spend .edit .button:hover,
+.spend .list-buttons .list-edit:hover,
+.spend .list-buttons .list-delete:hover {
+    cursor: pointer;
+    border: solid 1px rgba(183, 28, 28, 0.2);
+    background-color: rgba(183, 28, 28, 0.1);
+    box-shadow: rgba(0, 0, 0, 0.5) 1px 1px 2px;
+    opacity: 1;
 }
 
 .list {
-  display: flex;
-  margin: 20px 12px;
-  flex-direction: column;
+    display: flex;
+    margin: 20px 12px;
+    flex-direction: column;
 }
 
 .list-row {
-  display: flex;
+    padding-left: 5px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    border-top: 1px solid transparent;
+    border-bottom: 1px solid transparent;
+}
+
+.income .income-top-wrapper .list-row:hover {
+    background-color: rgba(0, 118, 70, 0.05);
+    cursor: pointer;
+    border-radius: 3px;
+}
+
+.spend .spend-top-wrapper .list-row:hover {
+    background-color: rgba(183, 28, 28, 0.05);
+    cursor: pointer;
+    border-radius: 3px;
 }
 
 .list-content {
-  display: flex;
-  width: 85%;
-  justify-content: space-between;
-  margin-right: 20px;
+    display: flex;
+    width: 85%;
+    justify-content: space-between;
+    margin-right: 20px;
+    align-items: center;
+}
+
+.list-edit,
+.list-delete {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 27px;
+    height: 27px;
+    margin: 2px;
+    border-radius: 50%;
+    opacity: 0.3;
+}
+
+.list-edit img,
+.list-delete img {
+    z-index: -1;
 }
 
 .list-buttons {
-  display: flex;
-  width: 15%;
+    display: flex;
+    width: 15%;
 }
 
 .list-buttons i {
-  padding: 5px;
-
-  margin: 3px;
-  border-radius: 50%;
-}
-
-.income .list-buttons .fa-pencil-alt {
-  background-color: rgba(0, 118, 70, 0.05);
-  border: solid 1px rgba(0, 118, 70, 0.1);
-  box-shadow: rgba(0, 0, 0, 0.2) 1px 1px 1px;
-  cursor: pointer;
-}
-
-.income .list-buttons .fa-trash-alt {
-  background-color: rgba(0, 118, 70, 0.05);
-  border: solid 1px rgba(0, 118, 70, 0.1);
-  box-shadow: rgba(0, 0, 0, 0.2) 1px 1px 1px;
-  cursor: pointer;
-}
-
-.spend .list-buttons .fa-pencil-alt {
-  background-color: rgba(183, 28, 28, 0.05);
-  border: solid 1px rgba(183, 28, 28, 0.1);
-  box-shadow: rgba(0, 0, 0, 0.2) 1px 1px 1px;
-  cursor: pointer;
-}
-
-.spend .list-buttons .fa-trash-alt {
-  background-color: rgba(183, 28, 28, 0.05);
-  border: solid 1px rgba(183, 28, 28, 0.1);
-  box-shadow: rgba(0, 0, 0, 0.2) 1px 1px 1px;
-  cursor: pointer;
+    padding: 5px;
+    margin: 3px;
+    border-radius: 50%;
 }
 
 .total {
-  font-weight: 600;
+    font-weight: 600;
 }
 
 .income .total .list-content {
-  border-top: 1px solid rgba(0, 118, 70, 0.4);
-  padding-top: 5px;
+    border-top: 1px solid rgba(0, 118, 70, 0.4);
+    padding-top: 5px;
 }
 
 .spend .total .list-content {
-  border-top: 1px solid rgba(183, 28, 28, 0.4);
-  padding-top: 5px;
+    border-top: 1px solid rgba(183, 28, 28, 0.4);
+    padding-top: 5px;
+}
+
+@media (max-width: 1300px) {
+    .wrapper {
+        width: 1000px;
+    }
+}
+
+@media (max-width: 1100px) {
+    .wrapper {
+        width: 800px;
+    }
+
+    .emoji {
+        left: 200px;
+        top: 50%;
+        transform: translateY(-50%);
+        width: 50px;
+        height: 50px;
+    }
+
+    .add .name {
+        width: 50%;
+    }
+
+    .add .button {
+        width: 20%;
+    }
+}
+
+@media (max-width: 900px) {
+    .wrapper {
+        width: 600px;
+    }
+
+    .income-spend-wrapper {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .income,
+    .spend {
+        width: 80%;
+        margin-bottom: 30px;
+        min-height: auto;
+    }
+
+    .emoji {
+        left: 50px;
+        top: 50%;
+        transform: translateY(-50%);
+        width: 50px;
+        height: 50px;
+    }
+}
+
+@media (max-width: 700px) {
+    .wrapper {
+        width: 360px;
+    }
+
+    .income-spend-wrapper {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .income,
+    .spend {
+        width: 80%;
+        margin-bottom: 30px;
+        min-height: auto;
+    }
+
+    .emoji {
+        display: none;
+    }
+
+    .add {
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+
+    .add .value {
+        width: 32%;
+    }
+
+    .add .button {
+        width: 50%;
+        margin: 10px;
+    }
+
+    .list-content {
+        width: 76%;
+        margin-right: 5px;
+    }
+
+    .list-buttons {
+        width: 24%;
+    }
 }
